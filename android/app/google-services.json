@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "64407088512",
+    "firebase_url": "https://collegenet-69.firebaseio.com",
+    "project_id": "collegenet-69",
+    "storage_bucket": "collegenet-69.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64407088512:android:12baa06b7c607aa1c8a565",
+        "android_client_info": {
+          "package_name": "com.example.collegenet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "64407088512-03o9h3p1dd5pv8kgvu3of1rqvd2mbra0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRk3750rcdPXJOmP015NUp9xHFv4E-7-8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "64407088512-03o9h3p1dd5pv8kgvu3of1rqvd2mbra0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

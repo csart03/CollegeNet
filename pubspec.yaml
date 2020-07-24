@@ -1,0 +1,226 @@
+name: collegenet
+description: A new Flutter project.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: 3.0.0
+  intl: ^0.16.1
+  http: ^0.12.1
+  cloud_firestore: ^0.13.6
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^0.1.3
+  firebase_auth: ^0.16.1
+  flutter_spinkit: ^4.1.2+1
+  file_picker: ^1.9.0+1
+  firebase_storage: ^3.1.6
+  uuid: ^2.0.4
+  dio: ^3.0.9
+  path_provider: ^1.6.10
+  permission_handler: ^5.0.0+hotfix.9
+  file_utils: ^0.1.3
+  open_file: ^3.0.1
+  flutter_icons: ^1.1.0
+  simple_animations: ^1.3.3
+  avatar_glow: ^1.2.0
+  flip_card: ^0.4.4
+  url_launcher: ^5.4.10
+  firebase_database: ^3.1.6
+  firebase_messaging: ^6.0.16
+  image_picker: ^0.6.7+1
+  sqflite: ^1.3.1
+  path: ^1.6.4
+  async: ^2.4.1
+  diagonal: ^1.0.1
+  shared_preferences: ^0.5.8
+  flutter_typeahead: ^1.8.5
+  line_awesome_icons: ^1.0.4+2
+  flutter_local_notifications: ^1.4.4+2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/logo1.jpg
+    - assets/images/taxicab.jpg
+    - assets/images/avatars/av1.png
+    - assets/images/avatars/av2.png
+    - assets/images/avatars/av3.png
+    - assets/images/avatars/av4.png
+    - assets/images/avatars/av5.png
+    - assets/images/avatars/av6.png
+    - assets/images/avatars/av7.png
+    - assets/images/avatars/av8.png
+    - assets/images/avatars/av9.png
+    - assets/images/avatars/av10.png
+    - assets/images/avatars/av11.png
+    - assets/images/avatars/av12.png
+    - assets/images/avatars/av13.png
+    - assets/images/avatars/av14.png
+    - assets/images/avatars/av15.png
+    - assets/images/avatars/av16.png
+    - assets/images/avatars/av17.png
+    - assets/images/avatars/av18.png
+    - assets/images/avatars/av19.png
+    - assets/images/avatars/av20.png
+    - assets/images/avatars/av21.png
+    - assets/images/avatars/av22.png
+    - assets/images/avatars/av23.png
+    - assets/images/avatars/av24.png
+    - assets/images/avatars/av25.png
+    - assets/images/avatars/av26.png
+    - assets/images/avatars/av27.png
+    - assets/images/avatars/av28.png
+    - assets/images/avatars/av29.png
+    - assets/images/avatars/av30.png
+    - assets/images/avatars/av31.png
+    - assets/images/avatars/av32.png
+    - assets/images/avatars/av33.png
+    - assets/images/avatars/av34.png
+    - assets/images/avatars/av35.png
+    - assets/images/avatars/av36.png
+    - assets/images/avatars/av37.png
+    - assets/images/avatars/av38.png
+    - assets/images/avatars/av39.png
+    - assets/images/avatars/av40.png
+    - assets/images/avatars/av41.png
+    - assets/images/avatars/av42.png
+    - assets/images/avatars/av43.png
+    - assets/images/avatars/av44.png
+    - assets/images/avatars/av45.png
+    - assets/images/avatars/av46.png
+    - assets/images/avatars/av47.png
+    - assets/images/avatars/av48.png
+    - assets/images/avatars/av49.png
+    - assets/images/avatars/av50.png
+    - assets/images/avatars/av51.png
+    - assets/images/avatars/av52.png
+    - assets/images/avatars/av53.png
+    - assets/images/avatars/av54.png
+    - assets/images/avatars/av55.png
+    - assets/images/avatars/av56.png
+    - assets/images/avatars/av57.png
+    - assets/images/avatars/av58.png
+    - assets/images/avatars/av59.png
+    - assets/images/avatars/av60.png
+    - assets/images/avatars/av61.png
+    - assets/images/avatars/av62.png
+    - assets/images/avatars/av63.png
+    - assets/images/avatars/av64.png
+    - assets/images/avatars/av65.png
+    - assets/images/avatars/av66.png
+    - assets/images/avatars/av67.png
+    - assets/images/avatars/av68.png
+    - assets/images/avatars/av69.png
+    - assets/images/avatars/av70.png
+    - assets/images/avatars/av71.png
+    - assets/images/avatars/av72.png
+    - assets/images/avatars/av73.png
+    - assets/images/avatars/av74.png
+    - assets/images/avatars/av75.png
+    - assets/images/avatars/av76.png
+    - assets/images/avatars/av77.png
+    - assets/images/avatars/av78.png
+    - assets/images/avatars/av79.png
+    - assets/images/avatars/av80.png
+    - assets/images/avatars/av81.png
+    - assets/images/avatars/av82.png
+    - assets/images/avatars/av83.png
+    - assets/images/avatars/av84.png
+    - assets/images/avatars/av85.png
+    - assets/images/avatars/av86.png
+    - assets/images/avatars/av87.png
+    - assets/images/avatars/av88.png
+    - assets/images/avatars/av89.png
+    - assets/images/avatars/av90.png
+    - assets/images/avatars/av91.png
+    - assets/images/avatars/av92.png
+    - assets/images/avatars/av93.png
+    - assets/images/avatars/av94.png
+    - assets/images/avatars/av95.png
+    - assets/images/avatars/av96.png
+    - assets/images/avatars/av97.png
+    - assets/images/avatars/av98.png
+    - assets/images/avatars/av99.png
+    - assets/images/avatars/av100.png
+
+  #   - images/a_dot_ham.jpeg
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    - family: Chelsea
+      fonts:
+        - asset: assets/fonts/ChelseaMarket-Regular.ttf
+    - family: Lato
+      fonts:
+        - asset: assets/fonts/Lato-Regular.ttf
+        - asset: assets/fonts/Lato-Bold.ttf
+          weight: 700
+    - family: Anton
+      fonts:
+        - asset: assets/fonts/Anton-Regular.ttf
+    - family: PermanentMarker
+      fonts:
+        - asset: assets/fonts/PermanentMarker-Regular.ttf
+    - family: SaucerBB
+      fonts:
+        - asset: assets/fonts/SaucerBB.ttf
+    - family: Alegreya
+      fonts:
+        - asset: assets/fonts/Alegreya-Medium.ttf
+    - family: CybertoothLight
+      fonts:
+      - asset: assets/fonts/CybertoothLight-z42w.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
