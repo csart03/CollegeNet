@@ -78,6 +78,15 @@ class _CabPostsState extends State<CabPosts> {
         doc.reference.delete();
       }
     });
+    await Firestore.instance
+        .collection('Chat Rooms')
+        .document(widget.chatRoomId)
+        .get()
+        .then((doc) {
+      if (doc.exists) {
+        doc.reference.delete();
+      }
+    });
     widget.rebuild();
   }
 
@@ -226,7 +235,7 @@ class _CabPostsState extends State<CabPosts> {
                 // ),
                 Row(children: <Widget>[
                   Container(
-                      padding: EdgeInsets.only(left: 30, right: 10),
+                      padding: EdgeInsets.only(left: 10, right: 5),
                       height: 120,
                       alignment: Alignment(0, -0.45),
                       child: CustomPaint(
@@ -335,15 +344,21 @@ class _CabPostsState extends State<CabPosts> {
                               leavetime: date + " " + time,
                             ),
                           );
-                          final fbm = FirebaseMessaging();
-                          await Firestore.instance
-                              .collection(
-                                  'Chat Rooms/${widget.chatRoomId}/users')
-                              .add(
-                            {
-                              'id': await fbm.getToken(),
-                            },
-                          );
+                          List<dynamic> crids =
+                              Provider.of<AllCabs>(context).crids;
+                          print("asdnasd");
+                          print(crids);
+                          if (crids.contains(widget.chatRoomId) == false) {
+                            final fbm = FirebaseMessaging();
+                            await Firestore.instance
+                                .collection(
+                                    'Chat Rooms/${widget.chatRoomId}/users')
+                                .add(
+                              {
+                                'id': await fbm.getToken(),
+                              },
+                            );
+                          }
                           Navigator.push(
                             context,
                             MaterialPageRoute(

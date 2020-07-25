@@ -204,34 +204,40 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
                   height: 30,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    InkWell(
-                      onTap: () async {
-                        if (await canLaunch(loadedEvent.fee)) {
-                          await launch(loadedEvent.fee);
-                        } else {
-                          throw 'Could not launch ${loadedEvent.fee}';
-                        }
-                      },
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 2 / 5,
-                        height: 60,
-                        margin: EdgeInsets.only(
-                          top: 30,
-                          left: 30,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                        child: Center(
-                          child: Text(
-                            "REGISTER",
-                            style: TextStyle(color: Colors.white),
+                    // print(loadedEvent.fee);
+                    if (loadedEvent.fee != "" && loadedEvent.fee != "https://")
+                      InkWell(
+                        onTap: () async {
+                          String url = loadedEvent.fee;
+                          if (!url.startsWith("http")) url = "https://" + url;
+                          print(url);
+                          if (await canLaunch(url)) {
+                            await launch(url);
+                          } else {
+                            throw 'Could not launch $url';
+                          }
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 2 / 5,
+                          height: 60,
+                          // margin: EdgeInsets.only(
+                          //   top: 30,
+                          //   left: 30,
+                          // ),
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "REGISTER",
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
                         ),
                       ),
-                    ),
                     InkWell(
                       onTap: () async {
                         // print("adwdaw");
@@ -240,19 +246,17 @@ class _EventDetailScreenState extends State<EventDetailScreen> {
                       child: Container(
                         width: MediaQuery.of(context).size.width * 2 / 5,
                         height: 60,
-                        margin: EdgeInsets.only(
-                          top: 30,
-                          left: 20,
-                        ),
                         decoration: BoxDecoration(
                           color: Colors.red,
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                         ),
                         child: Center(
-                          child: Text(
-                            "JOIN EVENT",
-                            style: TextStyle(color: Colors.white),
-                          ),
+                          child: loadedEvent.isGoing
+                              ? Text('LEAVE EVENT')
+                              : Text(
+                                  "JOIN EVENT",
+                                  style: TextStyle(color: Colors.white),
+                                ),
                         ),
                       ),
                     )

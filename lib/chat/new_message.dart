@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -28,6 +29,7 @@ class _NewMessageState extends State<NewMessage> {
       'username': userData['username'],
     });
     _controller.clear();
+    final fbm = FirebaseMessaging();
     // FirebaseMessaging fbm = new FirebaseMessaging();
     List<dynamic> listusers;
     QuerySnapshot qshot = await Firestore.instance
@@ -35,6 +37,7 @@ class _NewMessageState extends State<NewMessage> {
         .getDocuments();
     listusers = qshot.documents.map((doc) => doc.data['id']).toList();
     print(listusers);
+    listusers.remove(await fbm.getToken());
     await http.post(
       'https://fcm.googleapis.com/fcm/send',
       headers: <String, String>{

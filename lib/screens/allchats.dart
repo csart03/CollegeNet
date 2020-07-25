@@ -60,6 +60,7 @@ class ChatTile extends StatelessWidget {
           ),
         );
       },
+      onLongPress: () {},
       child: Column(
         children: <Widget>[
           Container(

@@ -4,6 +4,7 @@ import '../helpers/db_helper.dart';
 
 class AllCabs with ChangeNotifier {
   List<CabGroup> _items = [];
+  List<dynamic> _crid = [];
   void addEvent(CabGroup cg) {
     final ncg = CabGroup(
       chatRoomId: cg.chatRoomId,
@@ -12,6 +13,7 @@ class AllCabs with ChangeNotifier {
       leavetime: cg.leavetime,
     );
     _items.add(ncg);
+    _crid.add(cg.chatRoomId);
     notifyListeners();
     DBHelper.insert('cabinfo', {
       'source': ncg.source,
@@ -25,6 +27,10 @@ class AllCabs with ChangeNotifier {
     return [..._items];
   }
 
+  List<String> get crids {
+    return [..._crid];
+  }
+
   Future<void> fetchAndSetItems() async {
     final dataList = await DBHelper.getData('cabinfo');
     _items = dataList
@@ -35,6 +41,7 @@ class AllCabs with ChangeNotifier {
               leavetime: item['leavetime'],
             ))
         .toList();
+    _crid = dataList.map((item) => item['chatroomid']).toList();
     notifyListeners();
   }
 }
