@@ -1,11 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collegenet/pages/homepage.dart';
+import 'package:collegenet/providers/allgrps.dart';
+import 'package:collegenet/providers/cabgrp.dart';
 import 'package:collegenet/services/loading.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';
 
 import 'cabsharing.dart';
@@ -51,6 +54,14 @@ class _AddCabState extends State<AddCab> {
       {
         'id': await fbm.getToken(),
       },
+    );
+    Provider.of<AllCabs>(context).addEvent(
+      CabGroup(
+        chatRoomId: chatroom.documentID,
+        source: srcControl.text,
+        destination: destControl.text,
+        leavetime: date + " " + time,
+      ),
     );
     cabPostsRef.document(postId).setData({
       "college": college,

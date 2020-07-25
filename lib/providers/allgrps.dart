@@ -41,6 +41,11 @@ class AllCabs with ChangeNotifier {
               leavetime: item['leavetime'],
             ))
         .toList();
+    notifyListeners();
+  }
+
+  Future<void> fetchAndSetcrids() async {
+    final dataList = await DBHelper.getData('cabinfo');
     _crid = dataList.map((item) => item['chatroomid']).toList();
     notifyListeners();
   }

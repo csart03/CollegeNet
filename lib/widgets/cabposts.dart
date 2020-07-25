@@ -336,14 +336,8 @@ class _CabPostsState extends State<CabPosts> {
                           ),
                         ),
                         onPressed: () async {
-                          Provider.of<AllCabs>(context).addEvent(
-                            CabGroup(
-                              chatRoomId: widget.chatRoomId,
-                              source: widget.source,
-                              destination: widget.destination,
-                              leavetime: date + " " + time,
-                            ),
-                          );
+                          await Provider.of<AllCabs>(context)
+                              .fetchAndSetcrids();
                           List<dynamic> crids =
                               Provider.of<AllCabs>(context).crids;
                           print("asdnasd");
@@ -359,6 +353,14 @@ class _CabPostsState extends State<CabPosts> {
                               },
                             );
                           }
+                          Provider.of<AllCabs>(context).addEvent(
+                            CabGroup(
+                              chatRoomId: widget.chatRoomId,
+                              source: widget.source,
+                              destination: widget.destination,
+                              leavetime: date + " " + time,
+                            ),
+                          );
                           Navigator.push(
                             context,
                             MaterialPageRoute(
